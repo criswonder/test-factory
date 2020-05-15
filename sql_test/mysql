@@ -1,0 +1,9 @@
+update mysql.user set password='123456'  where user='root';
+
+select host,user,password from mysql.user;
+
+Grant all on db.table to 'root'@'localhost';
+mysqladmin -uroot -p123456 password abc123;
+
+
+UPDATE user SET Password=PASSWORD('abc123') where USER='root';

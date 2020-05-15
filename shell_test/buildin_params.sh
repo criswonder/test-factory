@@ -1,0 +1,2 @@
+echo $PPID
+echo $TIMEFORMAT

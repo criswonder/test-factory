@@ -1,0 +1,1130 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          android:installLocation="auto"
+          package="com.taobao.fleamarket"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <supports-screens android:anyDensity="true"
+                      android:largeScreens="true"
+                      android:normalScreens="true"
+                      android:resizeable="true"
+                      android:smallScreens="true"
+                      android:xlargeScreens="true"/>
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
+
+    <uses-permission android:name="org.agoo.android.permission.MESSAGE"/>
+    <uses-permission android:name="com.taobao.fleamarket.intent.action.START"/>
+    <uses-permission android:name="com.taobao.fleamarket.intent.action.COCKROACH"/>
+    <uses-permission android:name="com.taobao.fleamarket.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- 可选 -->
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL"/>
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.BATTERY_STATS"/>
+
+    <!-- QQ分享 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- 小米push 配置 可选  -->
+    <permission
+            android:name="com.taobao.fleamarket.permission.MIPUSH_RECEIVE"
+            android:protectionLevel="signatureOrSystem"/>
+    <uses-permission android:name="com.taobao.fleamarket.permission.MIPUSH_RECEIVE"/>
+
+    <!-- begin SSOlogin -->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <!-- end SSOlogin -->
+
+
+    <application
+            tools:replace="android:allowBackup,android:label"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:largeHeap="@bool/largeheap"
+            android:allowBackup="false"
+            android:name="com.taobao.fleamarket.TaoBaoApplication">
+        <meta-data
+                android:name="com.amap.api.v2.apikey"
+                android:value="@string/com_amap_api_v2_apikey"/>
+
+        <meta-data android:name="UMENG_APPKEY" android:value="522698b056240be8cc09878e"/>
+        <meta-data android:name="UMENG_CHANNEL" android:value="all"/>
+
+        <meta-data android:name="DATABASE_VERSION" android:value="20"/>
+
+        <meta-data android:name="MESSAGE_DATABASE_VERSION" android:value="10"/>
+
+        <activity android:exported="true" android:label="@string/app_name"
+                  android:name="com.taobao.fleamarket.activity.InitActivity" android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="fleamarkets"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="fleamarket"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation" android:name=".activity.jump.JumpActivity"
+                  android:screenOrientation="portrait" android:theme="@style/Transparent">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation" android:launchMode="singleTask"
+                  android:name=".zxing.activity.QrActivity" android:screenOrientation="portrait"
+                  android:theme="@style/titlebarstyle">
+        </activity>
+
+        <activity android:configChanges="orientation" android:launchMode="singleTask"
+                  android:name="com.taobao.fleamarket.webview.activity.SecurityInterceptorWebHybridActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme">
+        </activity>
+
+        <activity android:configChanges="orientation"
+                  android:name=".webview.WebHybridActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_webview" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_webview" android:scheme="fleamarkets"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_wnwebview" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_wnwebview" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation" android:launchMode="singleTask"
+                  android:name="com.taobao.fleamarket.activity.MainActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/MainActivityTheme"
+                  android:windowSoftInputMode="adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_home" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_home" android:scheme="fleamarkets"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_message" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_message" android:scheme="fleamarkets"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_person_center" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_person_center" android:scheme="fleamarkets"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_show_fishpond" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_show_fishpond" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation" android:name=".ponds.PondActivity"
+                  android:screenOrientation="portrait" android:theme="@style/ActionSheet">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_fishpond" android:scheme="fleamarket"/>
+                <data android:host="@string/jump_fishpond" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <!--Welcome Pond-->
+        <activity android:name=".ponds.WelcomePondActivity"
+                  android:screenOrientation="portrait" android:theme="@style/WelcomeDialogThemes"/>
+
+        <activity android:name=".im.swindow.activity.ServiceWindowActivity" android:configChanges="orientation"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="adjustResize"
+                  android:launchMode="singleTop"
+                  android:theme="@style/ActionSheet">
+        </activity>
+
+        <activity android:name=".ponds.chat.PondsChatActivity"
+                  android:configChanges="orientation"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="adjustResize"
+                  android:theme="@style/ActionSheet">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_fish_talk" android:scheme="fleamarket"/>
+                <data android:host="@string/jump_fish_talk" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.activity.mycity.ChooseCityActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+
+        <activity android:configChanges="orientation" android:launchMode="singleTop"
+                  android:name=".activity.login.LoginActivity" android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_login" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_login" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation" android:name=".zxing.activity.CaptureActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:configChanges="orientation" android:name=".zxing.activity.QRCodeActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".floatingLayer.FloatingViewActivity"
+                  android:screenOrientation="portrait" android:theme="@style/Transparent"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".chatwindow.FacePreviewActivity"
+                  android:screenOrientation="portrait" android:theme="@style/Transparent"/>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.detail.activity.ALipaySecuredActivity"
+                  android:screenOrientation="portrait" android:theme="@style/Transparent_All"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".post.publish.site.PostDivisionActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".user.person.edit.SesameInfoCredit"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+
+
+        <!--person-->
+        <activity android:configChanges="orientation"
+                  android:name=".user.person.edit.PersonInfoEditActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_account_setting" android:scheme="fleamarket"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation"
+                  android:name=".user.person.detail.PersonDetailsActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+        <activity android:configChanges="orientation"
+                  android:name=".user.person.userinfo.UserAvatarActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".user.person.edit.PersonLikesEditActivity"
+                  android:windowSoftInputMode="adjustPan"
+                  android:screenOrientation="portrait" android:theme="@style/Transparent"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".user.person.userinfo.UserInfoActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_sellerlist" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_sellerlist" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <!-- 发布 -->
+        <activity android:configChanges="orientation"
+                  android:name=".post.publish.v3.PublishActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:hardwareAccelerated="false"
+                  android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_post" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_post" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation"
+                  android:name=".post.publish.picture.PhotoMangerActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation"
+                  android:name=".post.publish.category.CategoryActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation"
+                  android:name=".post.publish.category.CategorySubActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation"
+                  android:name=".post.resale.ResaleActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_post_resell" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_post_resell" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <!--setting-->
+        <activity android:configChanges="orientation"
+                  android:name=".setting.SettingsActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".setting.AboutActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".setting.FeedbackWebViewActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".setting.FeedbackDialogActivity"
+                  android:screenOrientation="portrait" android:theme="@style/NoTitleDialog"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".setting.PicSettingActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".setting.VideoSettingActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".user.person.edit.PersonDescActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+
+
+        <activity android:configChanges="orientation" android:name="com.taobao.fleamarket.activity.person.CropActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".setting.MsgSettingActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.activity.mycity.MyCityMoreFishPondActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".detail.activity.FullScreenDetailActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".detail.activity.AddressListActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppBaseTheme"/>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.activity.person.TradesInfoPriceActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppBaseTheme"/>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.activity.person.TradesInfoShipActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppBaseTheme"/>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.activity.logistics.LogisticsCompanyActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppBaseTheme"/>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.activity.search.HistoryAndSuggestActivity"
+                  android:screenOrientation="portrait" android:theme="@style/SearchTheme"
+                  android:launchMode="singleTask"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+            android:name="com.taobao.fleamarket.ponds.view.PondSearchActivity"
+            android:screenOrientation="portrait" android:theme="@style/SearchTheme"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.activity.search.SubCategoryActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.activity.search.SearchResultActivity"
+                  android:screenOrientation="portrait" android:theme="@style/SearchTheme"
+                  android:launchMode="singleTask"
+                  android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_search_items" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_search_items" android:scheme="fleamarkets"/>
+            </intent-filter>
+
+        </activity>
+
+        <activity android:configChanges="orientation" android:launchMode="singleTask"
+                  android:name="com.taobao.fleamarket.activity.search.PondSearchResultActivity"
+                  android:screenOrientation="portrait" android:theme="@style/SearchTheme"
+                  android:windowSoftInputMode="stateHidden|adjustResize">
+
+        </activity>
+
+        <activity android:configChanges="orientation"
+                  android:name=".advert.AdvertActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppBaseTheme"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".setting.ConventionActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppBaseTheme"/>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.activity.person.LogisticsDetailActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppBaseTheme"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".detail.activity.BuildOrderActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppBaseTheme"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".detail.activity.DescriptionDetailActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:configChanges="orientation" android:name=".zxing.activity.QrCaptureActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:configChanges="orientation"
+                  android:name="android.taobao.windvane.activity.SimpleHybridActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name="com.umeng.fb.ConversationActivity" android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"/>
+
+        <activity android:name="com.taobao.fleamarket.activity.GuideActivity"
+                  android:screenOrientation="portrait"
+                  android:process=":guide"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".detail.activity.PraiseListActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation"
+                  android:name=".detail.activity.AuctBidListActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation"
+                  android:name=".detail.activity.BidRuleActivity"
+                  android:theme="@style/WelcomeDialogThemes"
+                  android:screenOrientation="portrait"/>
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.detail.activity.ItemDetailActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_item" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_item" android:scheme="fleamarkets"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_2.taobao.com" android:path="/item.htm" android:scheme="http"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_2.taobao.com" android:path="/item.htm" android:scheme="https"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.detail.subject.activity.SubjectDetailActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+                  android:name=".activity.search.CategorySearchActivity"
+                  android:screenOrientation="portrait" android:theme="@style/SearchTheme"
+                  android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_search" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_search" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation" android:name="com.taobao.fleamarket.activity.topic.TopicActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_selection" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_selection" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.activity.comment.SystemMessageActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_system_message" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_system_message" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation" android:launchMode="singleTask"
+                  android:name="com.taobao.fleamarket.message.activity.ChatActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_message_chat" android:scheme="fleamarket"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.message.activity.LikeMessageListActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:configChanges="orientation"
+                  android:name="com.taobao.fleamarket.message.activity.CommentMessageListActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"
+                  android:windowSoftInputMode="adjustResize"/>
+
+
+        <!--Mission-->
+        <activity android:name="com.taobao.fleamarket.activity.mission.MissionDialogActivity"
+                  android:screenOrientation="portrait" android:theme="@style/MissionDialogThemes"/>
+        <activity android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true"
+                  android:exported="false"
+                  android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tencent1101082016"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+        <activity android:configChanges="orientation|keyboardHidden|screenSize" android:launchMode="singleTop"
+                  android:name=".activity.photo.ChoosePhotosActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+
+        <activity android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:name="com.taobao.fleamarket.activity.transaction.OrderDetailActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_order_detail" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_order_detail" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:name="com.taobao.fleamarket.activity.person.BlackListActivity"
+                  android:screenOrientation="portrait" android:theme="@style/AppTheme"/>
+
+        <activity
+                android:name=".activity.person.OffShelfItemActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme"/>
+
+        <activity
+                android:name=".activity.person.OffShelfReasonActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait"
+                android:theme="@style/Transparent"/>
+
+        <activity
+                android:name=".activity.appraisal.AppraisalListActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait"
+                android:theme="@style/Transparent"/>
+
+        <activity
+                android:name=".activity.appraisal.AppraisalActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait"
+                android:theme="@style/Transparent"/>
+
+        <activity
+                android:name=".activity.person.OnShelfItemsActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme"/>
+
+        <activity
+                android:name=".activity.person.SoldItemsActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme"/>
+
+        <activity
+                android:name=".activity.person.BoughtItemsActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme"/>
+
+        <activity
+                android:name=".activity.person.FavouriteItemsActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_collect" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_collect" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".activity.person.FavorListActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:screenOrientation="portrait"
+                android:theme="@style/AppTheme"/>
+
+        <activity android:name=".activity.rate.WriteRateActivity"
+                  android:configChanges="orientation|screenSize"
+                  android:windowSoftInputMode="stateVisible"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+
+        <activity android:name=".activity.rate.RatePhotoDetailActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+
+        <activity android:name=".ponds.MorePondsActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+
+        <activity android:name=".activity.person.DraftListActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+
+        <activity android:name=".webview.activity.ApiLockedVerifyActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+        <activity android:name=".ponds.PondPeopleListActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+        <activity android:name=".post.publish.v3.PublishPondListActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+
+        <activity android:name=".post.subject.PostSubjectActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+
+        <activity android:name=".activity.mycity.MyCityFragment"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_mycity" android:scheme="fleamarket"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_mycity" android:scheme="fleamarkets"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation"
+                  android:name=".ponds.FloatingWebView"
+                  android:screenOrientation="portrait" android:theme="@style/FloatingWebView"/>
+
+        <receiver android:name="com.taobao.fleamarket.function.network.NetworkReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+
+        <!--topic-->
+        <activity android:name=".topic.activity.AddIntoTopicActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"/>
+
+        <activity android:name=".topic.activity.TopicGuideActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/WelcomeDialogThemes"/>
+
+        <activity android:name=".ponds.DiscoverPondOnMapActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppBaseTheme"/>
+
+        <activity android:name=".post.publish.v3.PublishEntryActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/PublishEntry"/>
+
+        <activity android:name=".post.publish.v3.PublishEntryClassifyActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/PublishEntry"/>
+
+        <!-- hotPath -->
+        <activity android:name="com.taobao.fleamarket.activity.arpc.ArpcActivity1" android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+        <activity android:name="com.taobao.fleamarket.activity.arpc.ArpcActivity2" android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+        <activity android:name="com.taobao.fleamarket.activity.arpc.ArpcActivity3" android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+        <activity android:name="com.taobao.fleamarket.activity.arpc.ArpcActivity4" android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+        <activity android:name="com.taobao.fleamarket.activity.arpc.ArpcActivity5" android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme"/>
+
+
+        <!-- end agoo push -->
+
+        <service android:exported="false" android:name="com.taobao.fleamarket.service.UpdateService"
+                 android:process=":update"/>
+
+        <service android:exported="false" android:name="anetwork.channel.aidl.NetworkService">
+            <intent-filter>
+                <action android:name="anetwork.channel.aidl.IRemoteNetworkGetter"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="mtopsdk.xstate.XStateService">
+            <intent-filter>
+                <action android:name="mtopsdk.xstate.aidl.IXState"/>
+            </intent-filter>
+        </service>
+
+        <!-- gps -->
+        <service android:name="com.amap.api.location.APSService"></service>
+
+        <!--for laiwang
+        <service android:exported="false" android:name="com.taobao.fleamarket.service.TbwMessageReceivedIntentService"/>
+        <service android:exported="false" android:name="com.taobao.fleamarket.service.TbwIntentService"
+                 android:process=":tbw"/>
+        <service android:exported="false" android:name="com.taobao.fleamarket.service.TbwService"
+                 android:process=":tbw"/>
+
+
+        <meta-data android:name="lwp.vhost" android:value="idlefish"/>
+        -->
+        <activity android:configChanges="orientation|keyboardHidden|navigation" android:launchMode="singleTask"
+                  android:name="com.ali.user.mobile.login.ui.UserLoginActivity_" android:screenOrientation="portrait"
+                  android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.sms.ui.SMSBizActivity_" android:screenOrientation="portrait"
+                  android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.webview.WebViewActivity_" android:screenOrientation="portrait"
+                  android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.account.bind.AlipayUserBindActivity_"
+                  android:screenOrientation="portrait" android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.account.bind.TaobaoAccountBindActivity_"
+                  android:screenOrientation="portrait" android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.register.ui.AliUserRegisterActivity_"
+                  android:screenOrientation="portrait" android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.webview.HtmlActivity" android:screenOrientation="portrait"
+                  android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.register.ui.AliUserRegisterChoiceRegionActivity_"
+                  android:screenOrientation="portrait" android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.register.ui.AliUserRegisterSMSActivity_"
+                  android:screenOrientation="portrait" android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.register.ui.WebViewActivity_" android:screenOrientation="portrait"
+                  android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.webview.AliUserRegisterWebview_"
+                  android:screenOrientation="portrait" android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.register.ui.AliUserRegisterSetLoginPassword_"
+                  android:screenOrientation="portrait" android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.ali.user.mobile.account.bind.NewAccountBindActivity_"
+                  android:screenOrientation="portrait" android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+
+        <!-- SSO 相关服务begin -->
+        <service android:exported="true" android:name="com.taobao.android.sso.internal.PidGetterService"/>
+        <!-- 兼容老版本，服务名不能修改 -->
+        <service android:enabled="false" android:exported="true"
+                 android:name="com.taobao.android.sso.internal.AuthenticationService"
+                 android:permission="android.permission.ACCOUNT_MANAGER">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator"
+                       android:resource="@xml/taobao_authenticator"/>
+            <meta-data android:name="android.accounts.AccountAuthenticator.customTokens" android:value="true"/>
+            <!-- Only for Android 2.3.3 -->
+            <meta-data android:name="com.taobao.android.sso.Version" android:value="@integer/sso_version_code"/>
+        </service>
+        <service android:enabled="false" android:exported="true"
+                 android:name="com.taobao.android.sso.internal.AlipayAuthenticationService"
+                 android:permission="android.permission.ACCOUNT_MANAGER">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator"
+                       android:resource="@xml/alipay_authenticator"/>
+            <meta-data android:name="android.accounts.AccountAuthenticator.customTokens" android:value="true"/>
+            <!-- Only for Android 2.3.3 -->
+            <meta-data android:name="com.taobao.android.sso.Version" android:value="@integer/sso_version_code"/>
+        </service>
+
+
+        <!--      agoo  -->
+        <!-- accs start -->
+        <service android:name="com.taobao.accs.ChannelService"
+                 android:exported="true" android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE"/>
+            </intent-filter>
+        </service>
+
+        <service android:name="com.taobao.accs.data.MsgDistributeService"
+                 android:exported="false">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE"/>
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.taobao.accs.EventReceiver"
+                  android:process=":channel">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.taobao.accs.ServiceReceiver"
+                  android:process=":channel">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.COMMAND"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.START_FROM_AGOO"/>
+            </intent-filter>
+        </receiver>
+        <!-- accs end -->
+        <!-- awcn start -->
+        <receiver android:name="anet.channel.heartbeat.HeartbeatManager$Receiver">
+            <intent-filter>
+                <action android:name="anetwork.channel.intent.action.COMMAND"/>
+            </intent-filter>
+        </receiver>
+        <!-- awcn end -->
+
+        <!-- agoo start -->
+        <service android:name="org.android.agoo.accs.AgooService"
+                 android:exported="true">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE"/>
+            </intent-filter>
+        </service>
+
+
+        <service android:name="com.taobao.fleamarket.TaobaoIntentService" android:exported="true">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.taobao.intent.mipush.action.COMMAND"/>
+            </intent-filter>
+        </service>
+
+        <!-- 接受agoo本地的控制事件 -->
+        <receiver
+                android:name="com.taobao.agoo.AgooCommondReceiver"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="com.taobao.taobao.intent.action.COMMAND"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.taobao.agoo.TaobaoMessageIntentReceiverService"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="org.android.agoo.client.MessageReceiverService" />
+            </intent-filter>
+        </service>
+
+
+        <activity
+                android:name=".wxapi.WXEntryActivity"
+                android:theme="@android:style/Theme.Translucent"
+                android:exported="true"/>
+        <activity
+                android:name=".apshare.ShareEntryActivity"
+                android:theme="@android:style/Theme.Translucent"
+                android:exported="true"/>
+
+        <activity
+                android:name="com.taobao.fleamarket.WeiboShareActivity"
+                android:theme="@android:style/Theme.Translucent"
+                android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.taobao.fleamarket.activity.person.FlauntActivity"
+                  android:screenOrientation="portrait" android:theme="@style/Theme.NoBackgroundAndTitle"
+                  android:windowSoftInputMode="adjustPan"/>
+
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+                  android:name="com.taobao.fleamarket.cropper.CropPhotoActivity"
+                  android:screenOrientation="portrait" android:theme="@style/Theme.NoBackground"
+                  android:windowSoftInputMode="adjustResize|stateHidden"/>
+
+
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+            android:name="com.taobao.fleamarket.message.activity.PondMemberChatActivity"
+            android:screenOrientation="portrait"    android:theme="@style/Theme.NoBackground"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_message_fishpond" android:scheme="fleamarket"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:configChanges="orientation|keyboardHidden|navigation"
+            android:name="com.taobao.fleamarket.message.activity.GoodsSubmitsActivity"
+            android:screenOrientation="portrait"    android:theme="@style/Theme.NoBackground"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.idlefish"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="@string/jump_goods_submit" android:scheme="fleamarket"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".subject.view.SubjectActivity"
+            android:theme="@style/Theme.NoBackground"
+            android:exported="false"/>
+
+
+        <service android:name="com.alibaba.mtl.appmonitor.AppMonitorService" ></service>
+
+        <!-- orange start -->
+        <!-- aidl service 用于支持aidl跨进程调用(这个service仅使用服务化接口时才需要，使用本地接口可以不加)-->
+        <service android:name="com.taobao.orange.service.OrangeApiService" android:exported="false">
+            <intent-filter>
+                <action android:name="com.taobao.orange.service.OrangeApiService" />
+            </intent-filter>
+        </service>
+
+
+        <receiver android:name="com.taobao.orange.receiver.OrangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <!-- orange end -->
+        <service android:name="com.taobao.fleamarket.ChatService">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <service android:name="android.taobao.windvane.extra.jsbridge.WVACCSService">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <!-- nbcache end -->
+    </application>
+
+
+
+
+
+
+
+
+</manifest>

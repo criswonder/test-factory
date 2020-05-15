@@ -1,0 +1,20 @@
+awk -F '[.=]' '{printf "compile  '"'"com.tmall.android:%s:%s.%s.%s@aar"'"'\n",$4,$6,$7,$8}' fk.txt  
+输出的结果：compile  'com.tmall.android:tmallandroid_xinshui:1.5.0-build-4@aar'
+
+awk 使用 printf 输出格式，printf 使用说明http://c.biancheng.net/cpp/html/33.html
+awk '{printf("%-18s  %s\n",$1,$2)}' branch_owners.txt 
+
+git branch |awk 'NF==2 {system("git push origin "$2)}'
+
+//删除 client 和 common 不需要的分支
+awk -F '[|]' -v BranchName='' ' {
+ gsub(/[[:blank:]]*/,"",$4);//去掉空格}
+$4=="N" {BranchName = substr($3,22);//截取分支名称
+print BranchName,$4;//打印分支名称
+system("git push origin :"BranchName);//执行 git 命令
+}' branches.txt 
+
+//上面一行的完整输出
+awk -F '[|]' -v BranchName='' ' { gsub(/[[:blank:]]*/,"",$4);} $4=="N" {BranchName = substr($3,22);print BranchName,$4;system("git push origin :"BranchName)}' branches.txt 
+
+

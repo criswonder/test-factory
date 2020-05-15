@@ -1,0 +1,70 @@
+--------- beginning of main
+04-27 16:36:18.103 D/FTLogger(22562): FULLTRACE:->send nobody type: 0x16
+04-27 16:36:18.103 V/Fulltrace-native(22562): appendNoBody appendNoBody
+04-27 16:36:18.465 I/ThermalEngine(  885): handle_thresh_sig: SS Id SS-CLUSTER1-SP1, Read xo_therm 43000mC
+04-27 16:36:18.476 E/ANDR-PERF-MPCTL(  735): poll() has timed out for /sys/module/msm_performance/events/cpu_hotplug
+04-27 16:36:18.476 E/ANDR-PERF-MPCTL(  735): Block on poll()
+04-27 16:36:18.639 I/taobao.idlefis(22562): Explicit concurrent copying GC freed 6761(480KB) AllocSpace objects, 1(20KB) LOS objects, 49% free, 13MB/27MB, paused 362us total 246.052ms
+04-27 16:36:18.788 D/FTLogger(22562): FULLTRACE:->send nobody type: 0x16
+04-27 16:36:18.788 V/Fulltrace-native(22562): appendNoBody appendNoBody
+04-27 16:36:18.972 I/ThermalEngine(  885): handle_thresh_sig: SS Id SS-CLUSTER1-SP1, Read xo_therm 43000mC
+04-27 16:36:19.249 D/MiuiFastConnectService( 9299): handleMessage: what: 8, msg.arg1: 0, msg.arg2: 0
+04-27 16:36:19.250 D/MiuiFastConnectService( 9299): stopBleScan: scanning: true
+04-27 16:36:19.253 D/BluetoothAdapter( 9299): isLeEnabled(): ON
+04-27 16:36:19.254 D/BtGatt.GattService( 2266): stopScan() - queue size =1
+04-27 16:36:19.256 D/BtGatt.ScanManager( 2266): stop scan
+04-27 16:36:19.257 D/BtGatt.GattService( 2266): unregisterScanner() - scannerId=5
+04-27 16:36:19.257 D/vendor.qti.bluetooth@1.0-ibs_handler(  708): SerialClockVote: vote for UART CLK ON
+04-27 16:36:19.260 D/vendor.qti.bluetooth@1.0-wake_lock(  708): Acquire wakelock is acquired 
+04-27 16:36:19.260 I/vendor.qti.bluetooth@1.0-ibs_handler(  708): DeviceWakeUp: Writing IBS_WAKE_IND
+04-27 16:36:19.262 D/PowerKeeperPolicy( 1693): stopLeScan: BleScanWrapper[mClientIf = 5 mPendingIntent=null] uid=1002BleScanWrapper[mClientIf = 5 mPendingIntent=null]
+04-27 16:36:19.264 I/vendor.qti.bluetooth@1.0-ibs_handler(  708): ProcessIbsCmd: Received IBS_WAKE_ACK: 0xFC
+04-27 16:36:19.267 I/vendor.qti.bluetooth@1.0-ibs_handler(  708): ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+04-27 16:36:19.267 I/vendor.qti.bluetooth@1.0-ibs_handler(  708): ProcessIbsCmd: Writing IBS_WAKE_ACK
+04-27 16:36:19.270 D/BtGatt.GattService( 2266): onScanFilterParamsConfigured() - clientIf=5, status=0, action=1, availableSpace=16
+04-27 16:36:19.270 D/BtGatt.ScanManager( 2266): callback done for scannerId - 5 status - 0
+04-27 16:36:19.271 D/BtGatt.ScanManager( 2266): configureRegularScanParams() - queue=0
+04-27 16:36:19.271 D/BtGatt.ScanManager( 2266): configureRegularScanParams() - ScanSetting LE 1M Scan mode=-2147483648ScanSetting LE Coded Scan mode=-2147483648 mLastConfiguredScanSettingLE1M=0 mLastConfiguredScanSettingLECoded=0scanPhy=1
+04-27 16:36:19.271 D/BtGatt.ScanManager( 2266): configureRegularScanParams() - queue emtpy, scan stopped
+04-27 16:36:19.271 D/BtGatt.ScanManager( 2266): configureRegularScanParams() - queue emtpy, scan stopped
+04-27 16:36:19.306 D/MiuiFastConnectService( 9299): handleMessage: what: 1, msg.arg1: 0, msg.arg2: 0
+04-27 16:36:19.309 D/BluetoothAdapter( 9299): isLeEnabled(): ON
+04-27 16:36:19.313 D/BtGatt.GattService( 2266): registerScanner() - UUID=7b4bc4d9-4de3-41db-b31c-8c8361c34aeb
+04-27 16:36:19.314 I/bt_stack( 2266): [INFO:gatt_api.cc(949)] GATT_Register3d52edaa-fe49-a673-eac1-0c4fec199ff5
+04-27 16:36:19.315 I/bt_stack( 2266): [INFO:gatt_api.cc(969)] allocated gatt_if=5
+04-27 16:36:19.315 D/BtGatt.GattService( 2266): onScannerRegistered() - UUID=7b4bc4d9-4de3-41db-b31c-8c8361c34aeb, scannerId=5, status=0
+04-27 16:36:19.315 I/vendor.qti.bluetooth@1.0-ibs_handler(  708): ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+04-27 16:36:19.315 D/BluetoothLeScanner( 9299): onScannerRegistered() - status=0 scannerId=5 mScannerId=0
+04-27 16:36:19.318 I/taobao.idlefis(22562): Explicit concurrent copying GC freed 6883(529KB) AllocSpace objects, 1(20KB) LOS objects, 49% free, 13MB/27MB, paused 477us total 211.934ms
+04-27 16:36:19.323 D/PowerKeeperPolicy( 1693): isLeScanAllowed: uid = 1002, allow = true
+04-27 16:36:19.325 D/BtGatt.GattService( 2266): start scan with filters
+04-27 16:36:19.327 D/BtGatt.ScanManager( 2266): handling starting scan
+04-27 16:36:19.328 D/BtGatt.ScanManager( 2266): isAptXLowLatencyModeEnabled: false
+04-27 16:36:19.330 I/vendor.qti.bluetooth@1.0-ibs_handler(  708): ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+04-27 16:36:19.330 I/vendor.qti.bluetooth@1.0-ibs_handler(  708): ProcessIbsCmd: Writing IBS_WAKE_ACK
+04-27 16:36:19.332 D/BtGatt.GattService( 2266): onScanFilterEnableDisabled() - clientIf=5, status=0, action=1
+04-27 16:36:19.332 D/BtGatt.ScanManager( 2266): callback done for scannerId - 5 status - 0
+04-27 16:36:19.332 D/PowerKeeperPolicy( 1693): startLeScan: BleScanWrapper[mClientIf = 5 mPendingIntent=null] uid=1002
+04-27 16:36:19.332 D/PowerKeeperPolicy( 1693): uid = 1002 setAllowed, allowed = true
+04-27 16:36:19.332 D/PowerKeeperPolicy( 1693): uid = 1002 setScanning, scanning = true
+04-27 16:36:19.333 D/PowerKeeperPolicy( 1693): startLeScan, uid = 1002 is scanning
+04-27 16:36:19.337 D/BtGatt.GattService( 2266): onScanFilterConfig() - clientIf=5, action = 0 status = 0, filterType=5, availableSpace=31
+04-27 16:36:19.337 D/BtGatt.ScanManager( 2266): callback done for scannerId - 5 status - 0
+04-27 16:36:19.337 D/BtGatt.ScanManager( 2266): configureFilterParamter 500 10000 1 0, deliveryMode=0
+04-27 16:36:19.339 D/BtGatt.GattService( 2266): onScanFilterParamsConfigured() - clientIf=5, status=0, action=0, availableSpace=15
+04-27 16:36:19.339 D/BtGatt.ScanManager( 2266): callback done for scannerId - 5 status - 0
+04-27 16:36:19.339 D/BtGatt.ScanManager( 2266): configureRegularScanParams() - queue=1
+04-27 16:36:19.339 D/BtGatt.ScanManager( 2266): configureRegularScanParams() - ScanSetting LE 1M Scan mode=0ScanSetting LE Coded Scan mode=0 mLastConfiguredScanSettingLE1M=-2147483648 mLastConfiguredScanSettingLECoded=-2147483648scanPhy=255
+04-27 16:36:19.340 D/BtGatt.ScanManager( 2266): configureRegularScanParams - scanInterval LE 1M = 1500configureRegularScanParams - scanWindow LE 1M= 150configureRegularScanParams - scanWindow LE Coded= 150configureRegularScanParams - scanWindow LE Coded= 150
+04-27 16:36:19.340 D/BtGatt.GattService( 2266): onScanParamSetupCompleted : 0
+04-27 16:36:19.390 I/vendor.qti.bluetooth@1.0-ibs_handler(  708): ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+04-27 16:36:19.416 D/FTLogger(22562): FULLTRACE:->send nobody type: 0x16
+04-27 16:36:19.416 V/Fulltrace-native(22562): appendNoBody appendNoBody
+04-27 16:36:19.479 I/ThermalEngine(  885): handle_thresh_sig: SS Id SS-CLUSTER1-SP1, Read xo_therm 43000mC
+04-27 16:36:19.967 I/taobao.idlefis(22562): Explicit concurrent copying GC freed 6845(497KB) AllocSpace objects, 1(20KB) LOS objects, 49% free, 13MB/27MB, paused 416us total 231.771ms
+04-27 16:36:19.985 I/ThermalEngine(  885): handle_thresh_sig: SS Id SS-CLUSTER1-SP1, Read xo_therm 43000mC
+04-27 16:36:20.098 D/FTLogger(22562): FULLTRACE:->send nobody type: 0x16
+04-27 16:36:20.098 V/Fulltrace-native(22562): appendNoBody appendNoBody
+04-27 16:36:20.349 I/vendor.qti.bluetooth@1.0-ibs_handler(  708): DeviceSleep: TX Awake, Sending SLEEP_IND
+04-27 16:36:20.349 D/vendor.qti.bluetooth@1.0-ibs_handler(  708): SerialClockVote: vote for UART CLK OFF
+04-27 16:36:20.442 I/taobao.idlefis(22562): Explicit concurrent copying GC freed 6633(462KB) AllocSpace objects, 1(20KB) LOS objects, 49% free, 13MB/27MB, paused 152us total 105.068ms

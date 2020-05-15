@@ -1,0 +1,6 @@
+awk -F '[|]' -v BranchName='' ' {
+ gsub(/[[:blank:]]*/,"",$0);}
+{
+print $0;
+system("git push origin :"$0);
+}' branches.txt 
